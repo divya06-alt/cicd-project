@@ -1,7 +1,7 @@
 resource "aws_instance" "devops_instance_1" {
   ami           = var.ami_id
   instance_type = var.instance_type
-  key_name = "cicd-key"
+  key_name = "webserver-key"
   subnet_id = aws_subnet.devops_subnet_1.id
 
   vpc_security_group_ids = [
@@ -27,7 +27,7 @@ resource "aws_instance" "devops_instance_1" {
 resource "aws_instance" "devops_instance_2" {
   ami           = var.ami_id
   instance_type = var.instance_type
-  key_name = "cicd-key"
+  key_name = "webserver-key"
   subnet_id = aws_subnet.devops_subnet_2.id
 
   vpc_security_group_ids = [
