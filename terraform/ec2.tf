@@ -17,6 +17,8 @@ resource "aws_instance" "devops_instance_1" {
     systemctl enable docker
     systemctl start docker
     usermod -aG docker ubuntu
+    docker pull ghcr.io/divya06-alt/divya-cicd-app:latest
+    docker run -d --name index --restart unless-stopped -p 80:80 ghcr.io/divya06-alt/divya-cicd-app:latest
   EOF
 
   tags = {
